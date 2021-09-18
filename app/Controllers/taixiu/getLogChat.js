@@ -4,7 +4,7 @@ var UserInfo = require('../../Models/UserInfo');
 
 module.exports = function(client){
 	var data;
-	TXChat.find({},'name value', {sort:{'_id':-1}, limit: 20}, function(err, post) {
+	TXChat.find({},'name value', {sort:{'_id':-1}, limit: 1}, function(err, post) {
 		if (post.length){
 			Promise.all(post.map(function(obj){
 			UserInfo.findOne({name:obj.name}, 'red lastVip redPlay vip', function(err, user){

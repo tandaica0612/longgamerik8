@@ -1268,6 +1268,7 @@ let playGameHu = function(){
 	return gameLoopHu;
 }
 let botchat = function(){
+	return;
 	botChat = setInterval(function(){
 		Helpers.shuffle(botListChat);
 		if(botListChat.length > 1){
