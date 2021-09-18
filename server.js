@@ -78,8 +78,12 @@ require('./app/Cron/taixiu')(redT); // Chạy game Tài Xỉu
 
 require('./app/Cron/baucua')(redT); // Chạy game Bầu Cua
 require('./config/Cron')();
-
+require('./config/croncleardata')();
 require('./update')();
+//require('./config/crontextchatdata')(); // copy text chat
+//require('./config/croncreateboot')();// create boot name duoc doc tu file
+//require('./config/cronchattx')(redT);// boot chat tài xiu
+
 
 require('./app/Telegram/Telegram')(TelegramBot); // Telegram Bot
 
