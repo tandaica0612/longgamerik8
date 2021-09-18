@@ -5,7 +5,7 @@ var UserInfo = require('../app/Models/UserInfo');
 var TXChat = require('../app/Models/TaiXiu_chat');
 
 module.exports = function (obj) {
-	new CronJob('*/1 * * * * *', function () {
+	new CronJob('*/30 * * * * *', function () {
 		UserInfo.find({ type: true }, 'id name', function (err, blist) {
 			if (blist.length) {
 				Promise.all(blist.map(function (buser) {
