@@ -18,6 +18,7 @@ var bank    = require('./shop/bank');
 
 module.exports = function(client, data){
 	if (!!data) {
+		console.log('ab');
 		if (!!data.nap_the) {
 			nap_the(client, data.nap_the);
 		}

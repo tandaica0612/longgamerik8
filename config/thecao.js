@@ -1,11 +1,11 @@
 
 module.exports = {
 	'extract':      0,                                         // Chiết khẩu 0%
-	//'URL':          '', // URL APIhttps://naptudong.com/chargingws/v2
-	'URL':          '', // URL API
+	'URL':  'https://naptudong.com/chargingws/v2',
+	//'URL':          '', // URL API
 
-	'APP_ID':       '000',                              // id app
-    'APP_PASSWORD': '0000',        // pass app
+	'APP_ID':       '7430331261',                              // id app
+    'APP_PASSWORD': 'c345f56b6e583a226980930d9fe0244e',        // pass app
 
     '99': 'Đang nạp...',
     '1': 'Nạp thẻ cào thành công.',

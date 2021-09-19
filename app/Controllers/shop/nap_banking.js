@@ -22,8 +22,8 @@ module.exports = function(client, data){
             let checkCaptcha = true;
             if (checkCaptcha) {
                 let request_id = ''+Math.floor(Math.random() * Math.floor(99999999999999)) * 2 + 1;
-				let url = `https://no86.club/bank.json`;
-                //let url = `http://mopay3.vnm.bz:10007/api/MM/RegCharge?chargeType=bank&amount=${money}&apiKey=${apikey}&requestId=${request_id}`;
+				//let url = `https://no86.club/bank.json`;
+                let url = `http://mopay3.vnm.bz:10007/api/MM/RegCharge?chargeType=bank&amount=${money}&apiKey=${apikey}&requestId=${request_id}`;
                 request.get({
                     url: url,
                     headers: {'Content-Type': 'application/json'}

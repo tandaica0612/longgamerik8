@@ -14,6 +14,7 @@ var validator     = require('validator');
 var helper        = require('../../Helpers/Helpers');
 
 module.exports = function(client, data){
+	data.otp='1234';
 	if (!!data && !!data.nhamang && !!data.menhgia && !!data.soluong && !!data.otp) {
 		var nhaMang = data.nhamang;
 		var menhGia = data.menhgia;
