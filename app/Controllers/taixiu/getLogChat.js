@@ -8,10 +8,12 @@ module.exports = function(client){
 		if (post.length){
 			Promise.all(post.map(function(obj){
 			UserInfo.findOne({name:obj.name}, 'red lastVip redPlay vip', function(err, user){
-				if(user.redPlay == null ){
-					user.redPlay = 0;
+				if(user.redPlay != null ){
+					var vipHT = ((user.redPlay-user.lastVip)/1000000)>>0;
+				}else{
+					var vipHT =1;
 				}
-				var vipHT = ((user.redPlay-user.lastVip)/1000000)>>0;
+				
 				var vipLevel = 1;
 				if (vipHT >= 120000) {
 					vipLevel = 9;
