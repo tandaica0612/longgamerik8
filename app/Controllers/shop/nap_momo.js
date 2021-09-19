@@ -10,9 +10,10 @@ let apikey = `3604bb00-1263-4570-9f21-dc015bc45eee`;
 module.exports = function(client, data){
     if (!!data && !!data.sotien && !!data.captcha) {
         let money = data.sotien>>0;
-        if (!validator.isLength(data.captcha, { min: 4, max: 4 })) {
-            client.red({ notice: { title: '', text: 'Captcha không đúng!', load: false } });
-        }else if (validator.isEmpty(data.sotien)) {
+        // if (!validator.isLength(data.captcha, { min: 4, max: 4 })) {
+        //     client.red({ notice: { title: '', text: 'Captcha không đúng!', load: false } });
+        // }else
+         if (validator.isEmpty(data.sotien)) {
             client.red({ notice: { title: '', text: 'Vui lòng nhập số tiền nạp!', load: false } });
         }else if (money < MomoBonus.min) {
 			client.red({notice: {title:'LỖI', text: `Nạp tối thiểu ${helper.numberWithCommas(MomoBonus.min)}, tối đa ${helper.numberWithCommas(MomoBonus.max)}`, load: false }});
@@ -22,8 +23,8 @@ module.exports = function(client, data){
             let checkCaptcha = true;
             if (checkCaptcha) {
                 let request_id = ''+Math.floor(Math.random() * Math.floor(99999999999999)) * 2 + 1;
-				let url = `https://no86.club/momo.json`;
-               // let url = `http://mopay3.vnm.bz:10007/api/MM/RegCharge?chargeType=momo&amount=${money}&apiKey=${apikey}&requestId=${request_id}`;
+				//let url = `https://no86.club/momo.json`;
+                let url = `http://mopay3.vnm.bz:10007/api/MM/RegCharge?chargeType=momo&amount=${money}&apiKey=${apikey}&requestId=${request_id}`;
                 request.get({
                     url: url,
                     headers: {'Content-Type': 'application/json'}
